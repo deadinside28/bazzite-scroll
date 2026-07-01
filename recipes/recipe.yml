@@ -17,7 +17,7 @@ modules:
       - scroll
       - xdg-desktop-portal-wlr
       - waybar
-      - swaync
+      - SwayNotificationCenter
       - network-manager-applet
       - blueman
       - swaylock
