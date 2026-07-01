@@ -1,40 +1,27 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
 name: bazzite-scroll
 description: My custom Bazzite OS with Scroll and Waybar
 
-# ВАЖНО: Меняем базу с silverblue на bazzite (KDE). 
-# Это сохранит все игровые патчи и правильный экран входа SDDM.
 base-image: ghcr.io/ublue-os/bazzite
 image-version: latest
 
-# Модули выполняются по порядку сверху вниз
 modules:
-  # Этот модуль мы оставляем. Он позволяет в будущем закидывать свои 
-  # системные конфиги прямо в образ (папка files/system в репозитории).
   - type: files
     files:
       - source: system
         destination: /
 
-  # Главный модуль установки системных пакетов
   - type: rpm-ostree
     repos:
-      # Подключаем репозиторий Terra для установки Scroll
       - https://terra.fyre.moe/terra.repo
     install:
-      # Оконный менеджер и портал
       - scroll
       - xdg-desktop-portal-wlr
-      # Интерфейс и системный трей
       - waybar
       - swaync
       - network-manager-applet
       - blueman
-      # Управление питанием и дисплеями
       - swaylock
       - swayidle
       - wdisplays
-      # Утилиты
       - nwg-look
       - playerctl
