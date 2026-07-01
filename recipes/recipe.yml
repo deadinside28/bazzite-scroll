@@ -12,7 +12,7 @@ modules:
 
   - type: rpm-ostree
     repos:
-      - https://terra.fyre.moe/terra.repo
+      - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
     install:
       - scroll
       - xdg-desktop-portal-wlr
