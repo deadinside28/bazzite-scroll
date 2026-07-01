@@ -16,12 +16,10 @@ modules:
     install:
       - scroll
       - xdg-desktop-portal-wlr
-      - waybar
       - SwayNotificationCenter
       - network-manager-applet
       - blueman
       - swaylock
       - swayidle
-      - wdisplays
-      - nwg-look
+      - nwg-displays
       - playerctl
